@@ -1,0 +1,112 @@
+<?php
+
+return [
+    'brand' => 'UstBosh',
+    'tagline' => "Kiyim-do'konlaringizni bitta oynadan boshqaring",
+    'nav' => [
+        'features' => 'Imkoniyatlar',
+        'how' => 'Qanday ishlaydi',
+        'contact' => 'Aloqa',
+        'login' => 'Kirish',
+    ],
+    'hero' => [
+        'badge' => 'Kiyim-kechak savdosi uchun yangi avlod tizimi',
+        'title' => "Do'koningizni qog'oz va daftarlardan",
+        'title_accent' => 'raqamli boshqaruvga',
+        'title_suffix' => "o'tkazing",
+        'description' => 'Ombor, kassa va hisobotlar — hammasi bitta joyda. Skladchi pachkalab tovar kiritadi, kassir bir zumda sotadi, siz esa telefon orqali hammasini nazorat qilasiz.',
+        'cta' => 'Bepul sinab ko‘rish',
+        'cta_secondary' => 'Qanday ishlaydi',
+        'stat_shops' => 'do‘konlar uchun',
+        'stat_roles' => 'xodim roli',
+        'stat_minutes' => 'daqiqada ishga tayyor',
+    ],
+    'features' => [
+        'kicker' => 'Imkoniyatlar',
+        'title' => 'Savdoingizning to‘rt qanoti',
+        'subtitle' => 'Har bir xodim o‘ziga tegishli oddiy oynada ishlaydi — ortiqcha tugmalar yo‘q.',
+        'items' => [
+            [
+                'title' => 'Kassir uchun POS',
+                'text' => 'Kiyim kodi yoki nomi bo‘yicha bir necha soniyada toping, razmer qoldig‘ini ko‘ring va savatni rasmiylashtiring.',
+            ],
+            [
+                'title' => 'Skladchi uchun ombor',
+                'text' => 'Kelgan pachkani razmer va ranglar kesimida kiritasiz — qoldiq o‘zi yangilanadi, hisob-kitob qo‘lda yuritilmaydi.',
+            ],
+            [
+                'title' => 'Ega uchun analitika',
+                'text' => 'Kunlik va oylik sotuvlar, daromad, top tovarlar va qoldiqlar — grafiklarda, telefonilda ham qulay.',
+            ],
+            [
+                'title' => 'Xodimlar boshqaruvi',
+                'text' => 'Kassir va skladchilarga bir necha klikda login-parol bering, kirishlarni istalgan vaqtda to‘xtating.',
+            ],
+        ],
+    ],
+    'steps' => [
+        'kicker' => 'Qanday ishlaydi',
+        'title' => 'Uch qadamda boshlanadi',
+        'subtitle' => "Ro'yxatdan o'tish pullik emas — mutaxassisimiz siz bilan bog'lanadi va do'koningizni tayyorlab beradi.",
+        'items' => [
+            [
+                'title' => 'Ariza qoldirasiz',
+                'text' => "Pastdagi formada do'koningiz nomi va telefon raqamingizni yozib qoldirasiz.",
+            ],
+            [
+                'title' => 'Do‘koningiz ochiladi',
+                'text' => 'Bizning jamoa do‘koningizni tizimga kiritadi va egasi uchun kirish ma‘lumotlarini beradi.',
+            ],
+            [
+                'title' => 'Xodimlar ishga kirishadi',
+                'text' => 'Kassir va skladchi o‘z login-parolini oladi va savdo darhol boshlanadi.',
+            ],
+        ],
+    ],
+    'roles' => [
+        'kicker' => 'Rollar',
+        'title' => 'Kim nima bilan ishlaydi',
+        'super_admin' => 'Tizim administratori',
+        'owner' => "Do'kon egasi",
+        'warehouse' => 'Skladchi',
+        'cashier' => 'Kassir',
+    ],
+    'form' => [
+        'kicker' => 'Aloqa',
+        'title' => "Do'koningizni tizimga olib kiramiz",
+        'subtitle' => "Arizangizni qoldiring — bir ish kuni ichida siz bilan bog'lanamiz.",
+        'shop_name' => "Do'kon nomi",
+        'shop_name_placeholder' => 'Masalan: Brand Savdo Markazi',
+        'contact_name' => 'Ismingiz',
+        'contact_name_placeholder' => 'F.I.Sh.',
+        'email' => 'Email manzilingiz',
+        'email_placeholder' => 'masalan: ali@gmail.com',
+        'phone' => 'Telefon raqami',
+        'phone_placeholder' => '+998 90 123 45 67',
+        'message' => 'Xabar (ixtiyoriy)',
+        'message_placeholder' => "Do'koningiz haqida qisqacha yozib qoldiring...",
+        'submit' => 'Ariza yuborish',
+        'sending' => 'Yuborilmoqda...',
+        'success' => "Rahmat! Arizangiz qabul qilindi — tez orada bog'lanamiz.",
+        'duplicate' => "Siz oldin ham xabar qoldirgansiz. Arizangiz ko'rib chiqilmoqda — tez orada siz bilan bog'lanamiz.",
+        'privacy' => "Ma'lumotlaringiz faqat siz bilan bog'lanish uchun ishlatiladi.",
+    ],
+    'footer' => [
+        'rights' => 'Barcha huquqlar himoyalangan.',
+        'made_for' => "Kiyim-kechak do'konlari uchun yaratildi",
+    ],
+    'validation' => [
+        'shop_name_required' => "Do'kon nomini kiriting.",
+        'shop_name_max' => "Do'kon nomi 255 belgidan oshmasligi kerak.",
+        'contact_name_required' => 'Ismingizni kiriting.',
+        'contact_name_max' => 'Ism 255 belgidan oshmasligi kerak.',
+        'email_required' => 'Email manzilingizni kiriting.',
+        'email_email' => "Email manzil noto'g'ri formatda.",
+        'email_max' => 'Email 255 belgidan oshmasligi kerak.',
+        'phone_required' => 'Telefon raqamini kiriting.',
+        'phone_max' => 'Telefon raqami juda uzun.',
+        'phone_regex' => "Telefon raqami formati noto'g'ri. Masalan: +998 90 123 45 67",
+        'message_max' => 'Xabar 2000 belgidan oshmasligi kerak.',
+    ],
+    'lang_switch' => 'Русский',
+];

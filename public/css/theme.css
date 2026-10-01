@@ -1,0 +1,488 @@
+/*
+ * UstBosh — maxsus tema (DaisyUI stock ranglaridan voz kechildi)
+ * Palitra: issiq qog'oz fon, chuqur siyoh, xantal/oltin aksent, terracota
+ * Shriftlar: Archivo (asosiy) + JetBrains Mono (raqam/kod)
+ */
+:root {
+    --sm-paper: #F6F1E7;      /* issiq qog'oz fon */
+    --sm-paper-2: #EFE7D8;    /* ikkinchi darajali fon */
+    --sm-card: #FDFBF6;       /* kartalar */
+    --sm-ink: #1F2A24;        /* chuqur siyoh-yashil (matn) */
+    --sm-ink-soft: #5A6660;   /* yumshoq matn */
+    --sm-accent: #C96F2E;     /* xantal-oltin (asosiy aksent) */
+    --sm-accent-ink: #FFF8EF; /* aksent ustidagi matn */
+    --sm-clay: #A34A32;       /* terracota (ogohlantiruvchi/urug' rang) */
+    --sm-line: #DCD2BE;       /* chegaralar */
+    --sm-ok: #3E7C59;         /* muvaffaqiyat */
+    --sm-err: #B23A3A;        /* xato */
+}
+
+[data-theme="savdomarkaz"] {
+    color-scheme: light;
+
+    /* DaisyUI asosiy ranglar */
+    --color-base-100: var(--sm-paper);
+    --color-base-200: var(--sm-paper-2);
+    --color-base-300: #E4DAC6;
+    --color-base-content: var(--sm-ink);
+
+    --color-primary: var(--sm-ink);
+    --color-primary-content: var(--sm-paper);
+
+    --color-secondary: var(--sm-clay);
+    --color-secondary-content: #FFF6F0;
+
+    --color-accent: var(--sm-accent);
+    --color-accent-content: var(--sm-accent-ink);
+
+    --color-neutral: #24322B;
+    --color-neutral-content: var(--sm-paper);
+
+    --color-info: #2F6E8E;
+    --color-info-content: #F0F8FC;
+    --color-success: var(--sm-ok);
+    --color-success-content: #F0F8F2;
+    --color-warning: #B98A1D;
+    --color-warning-content: #FFFBEF;
+    --color-error: var(--sm-err);
+    --color-error-content: #FFF3F3;
+
+    /* DaisyUI 5 o'zgaruvchilari */
+    --radius-selector: 0.75rem;
+    --radius-field: 0.625rem;
+    --radius-box: 1.1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+}
+
+/* Vizual detallar */
+[data-theme="savdomarkaz"] body {
+    background-image:
+        radial-gradient(60rem 30rem at 85% -10%, rgba(201, 111, 46, 0.09), transparent 60%),
+        radial-gradient(50rem 26rem at -10% 10%, rgba(31, 42, 36, 0.06), transparent 55%);
+    background-attachment: fixed;
+}
+
+[data-theme="savdomarkaz"] ::selection {
+    background: var(--sm-accent);
+    color: var(--sm-accent-ink);
+}
+
+/* Fokus halqasi — faqat bitta, toza brend rangida.
+   DaisyUI'ning o'z fokus halqasi (qora box-shadow/outline) o'chiriladi. */
+[data-theme="savdomarkaz"] :focus-visible {
+    outline: 2px solid var(--sm-accent);
+    outline-offset: 2px;
+}
+
+[data-theme="savdomarkaz"] .input:focus,
+[data-theme="savdomarkaz"] .input:focus-visible,
+[data-theme="savdomarkaz"] .textarea:focus,
+[data-theme="savdomarkaz"] .textarea:focus-visible,
+[data-theme="savdomarkaz"] .select:focus,
+[data-theme="savdomarkaz"] .select:focus-visible,
+[data-theme="savdomarkaz"] .btn:focus,
+[data-theme="savdomarkaz"] .btn:focus-visible {
+    outline: 2px solid var(--sm-accent);
+    outline-offset: 2px;
+    box-shadow: none; /* DaisyUI'ning ichki qora halqasini olib tashlaydi */
+    border-color: var(--sm-line);
+}
+
+[data-theme="savdomarkaz"] .input:focus-visible,
+[data-theme="savdomarkaz"] .textarea:focus-visible,
+[data-theme="savdomarkaz"] .select:focus-visible {
+    border-color: var(--sm-accent);
+}
+
+/* ---- Smooth scroll (sticky navbar hisobga olingan) ---- */
+html[data-theme="savdomarkaz"] {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem; /* anchorga o'tganda navbar ostiga berkitilmasin */
+}
+
+/* ---- Navbar: scroll'da siqilishi ---- */
+.site-header {
+    transition:
+        background-color .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.site-header .header-inner {
+    height: 4rem;
+    transition: height .35s cubic-bezier(.22, .8, .36, 1);
+}
+
+.site-header.is-scrolled {
+    background-color: rgba(253, 251, 246, .96);
+    border-color: var(--sm-line);
+    box-shadow: 0 10px 30px -18px rgba(31, 42, 36, .4);
+}
+
+.site-header.is-scrolled .header-inner {
+    height: 3.25rem;
+}
+
+.site-header.is-scrolled .brand-mark {
+    transform: scale(.92);
+}
+
+.brand-mark {
+    transition: transform .35s cubic-bezier(.22, .8, .36, 1);
+}
+
+/* Yordamchi klasslar (Tailwind CDN bilan ishlash uchun) */
+.sm-shadow-elev {
+    box-shadow: 0 1px 2px rgba(31, 42, 36, 0.05), 0 12px 32px -16px rgba(31, 42, 36, 0.25);
+}
+.sm-shadow-hover {
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+.sm-shadow-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4px rgba(31, 42, 36, 0.06), 0 20px 44px -18px rgba(163, 74, 50, 0.35);
+}
+.sm-hero-grid {
+    background-image:
+        linear-gradient(to right, rgba(31, 42, 36, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(31, 42, 36, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, black 40%, transparent 100%);
+}
+.sm-stripe {
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--sm-accent) 0 10px,
+        transparent 10px 20px
+    );
+}
+
+/* Kirish animatsiyalari — sahifa yuklanganda bosqichma-bosqich */
+@keyframes sm-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.sm-rise {
+    animation: sm-rise .6s cubic-bezier(.22,.8,.36,1) both;
+}
+.sm-rise-1 { animation-delay: .05s; }
+.sm-rise-2 { animation-delay: .15s; }
+.sm-rise-3 { animation-delay: .25s; }
+.sm-rise-4 { animation-delay: .35s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .sm-rise,
+    .sm-float,
+    .sm-pop,
+    .sm-alert,
+    .sm-breathe { animation: none; }
+    .sm-reveal { opacity: 1; transform: none; transition: none; }
+    .btn-shine::after { animation: none; content: none; }
+    .sm-shadow-hover,
+    .sm-grow { transition: none; }
+    .nav-link::after { transition: none; }
+    html[data-theme="savdomarkaz"] { scroll-behavior: auto; }
+    .site-header,
+    .site-header .header-inner,
+    .brand-mark { transition: none; }
+}
+
+/* ============ ANIMATSIYALAR ============ */
+
+/* 1) Scroll-reveal: elementlar scroll bilan ko'ringanda yumshoq chiqish */
+.sm-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity .7s cubic-bezier(.22, .8, .36, 1),
+        transform .7s cubic-bezier(.22, .8, .36, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+}
+.sm-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Chapdan/kerakdan kirish variantlari */
+.sm-reveal-left { transform: translateX(-32px); }
+.sm-reveal-left.is-visible { transform: translateX(0); }
+
+.sm-reveal-right { transform: translateX(32px); }
+.sm-reveal-right.is-visible { transform: translateX(0); }
+
+/* 2) Hero kartochkalarining yumshoq "suzishi" */
+@keyframes sm-float {
+    0%, 100% { transform: translateY(0) rotate(var(--float-rot, 0deg)); }
+    50% { transform: translateY(-10px) rotate(var(--float-rot, 0deg)); }
+}
+.sm-float {
+    animation: sm-float 5s ease-in-out infinite;
+}
+.sm-float-slow { animation-duration: 6.5s; }
+
+/* 3) Sanoqchilar (stats) uchun "pitfall" animatsiya */
+@keyframes sm-pop {
+    0% { opacity: 0; transform: scale(.6); }
+    60% { transform: scale(1.12); }
+    100% { opacity: 1; transform: scale(1); }
+}
+.sm-pop {
+    animation: sm-pop .5s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+.sm-pop-1 { animation-delay: .45s; }
+.sm-pop-2 { animation-delay: .55s; }
+.sm-pop-3 { animation-delay: .65s; }
+
+/* 4) Asosiy CTA tugmada yalt-etib o'tuvchi yorug'lik (shine) */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+.btn-shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        transparent 30%,
+        rgba(255, 255, 255, .45) 50%,
+        transparent 70%
+    );
+    transform: translateX(-120%);
+    animation: sm-shine 3.2s ease-in-out infinite;
+}
+@keyframes sm-shine {
+    0%, 55% { transform: translateX(-120%); }
+    85%, 100% { transform: translateX(120%); }
+}
+
+/* 5) Nav havolalari ostida o'sib chiquvchi chiziqcha */
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--sm-accent);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s cubic-bezier(.22, .8, .36, 1);
+}
+.nav-link:hover::after,
+.nav-link.is-active::after {
+    transform: scaleX(1);
+}
+
+/* 6) Scrollspy: faol bo'lim havolasi aksent rangda */
+.nav-link.is-active {
+    color: var(--sm-accent);
+    font-weight: 700;
+}
+
+/* 7) Forma tugmasi hover'da biroz o'sadi */
+.sm-grow {
+    transition: transform .25s cubic-bezier(.22, .8, .36, 1), box-shadow .25s ease;
+}
+.sm-grow:hover {
+    transform: scale(1.03);
+}
+
+/* 8) Muvaffaqiyat xabarining e'tiborni tortuvchi chiqishi */
+@keyframes sm-slide-down {
+    from { opacity: 0; transform: translateY(-12px) scale(.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.sm-alert {
+    animation: sm-slide-down .45s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+
+/* 8.5) Parol talablari indikatori (auth sahifalari) */
+.pw-rule {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    color: var(--sm-ink-soft);
+    transition: color .2s ease;
+}
+
+.pw-rule::before {
+    content: '○';
+    font-size: .85em;
+    line-height: 1;
+}
+
+.pw-rule.is-ok {
+    color: var(--sm-ok);
+}
+
+.pw-rule.is-ok::before {
+    content: '✓';
+    font-weight: 700;
+}
+
+/* 9) Hero grid naqshining sekin "nafas olishi" */
+
+/* 10) Fon animatsiyali kiyim-kechak ikonkalari (hero orqasida suzadi) */
+.clothes-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.clothes-icon {
+    position: absolute;
+    color: var(--sm-ink);
+    opacity: 0;
+    animation:
+        sm-drift linear infinite,
+        sm-fade-in 2s ease-out forwards;
+    will-change: transform;
+}
+
+.clothes-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes sm-drift {
+    0% {
+        transform: translate(0, 0) rotate(var(--icon-rot, 0deg));
+    }
+    33% {
+        transform: translate(14px, -22px) rotate(calc(var(--icon-rot, 0deg) + 4deg));
+    }
+    66% {
+        transform: translate(-12px, -8px) rotate(calc(var(--icon-rot, 0deg) - 5deg));
+    }
+    100% {
+        transform: translate(0, 0) rotate(var(--icon-rot, 0deg));
+    }
+}
+
+@keyframes sm-fade-in {
+    to { opacity: var(--icon-opacity, 0.07); }
+}
+
+/* Aksent rangli ikonkalar */
+.clothes-icon.is-accent {
+    color: var(--sm-accent);
+}
+
+/* Har ikonka o'z tezligi/yo'nalishi bilan suzadi */
+.clothes-icon:nth-child(odd) {
+    animation-direction: normal, normal;
+    animation-duration: var(--drift-duration, 18s), 2s;
+}
+
+.clothes-icon:nth-child(even) {
+    animation-direction: alternate-reverse, normal;
+    animation-duration: calc(var(--drift-duration, 18s) * 1.4), 2s;
+}
+
+@keyframes sm-breathe {
+    0%, 100% { opacity: .55; }
+    50% { opacity: 1; }
+}
+.sm-breathe {
+    animation: sm-breathe 8s ease-in-out infinite;
+}
+
+/* ============ MOBIL MOSLASHUVCHANLIK ============ */
+
+/* xs breakpoint (Tailwind'da yo'q, mobil uchun qo'shamiz) */
+@media (min-width: 420px) {
+    .xs\:inline-flex { display: inline-flex; }
+    .xs\:hidden { display: none; }
+}
+
+@media (max-width: 640px) {
+    .sm-display { letter-spacing: -0.02em; }
+
+    /* Hero: kichikroq sarlavha va bo'shliqlar */
+    .sm-hero-title { font-size: 1.9rem; line-height: 1.12; }
+
+    /* Stats ustma-ust tushmasin */
+    .sm-stats { gap: .75rem 1.25rem; }
+
+    /* Kartochkalar padding kamaytiriladi */
+    .sm-card-pad { padding: 1.1rem; }
+
+    /* Forma tugmalari to'liq kenglikda, qulay barmoq uchun */
+    .sm-form .btn { min-height: 3rem; }
+
+    /* Hero vizual kartochkasi mobilda ko'rinmaydi (hidden md:block),
+       lekin mini stats panelni qo'shamiz — pastdagi bo'limlarda */
+}
+
+/* Juda kichik ekranlarda (320-380px) */
+@media (max-width: 400px) {
+    .sm-hero-title { font-size: 1.65rem; }
+}
+
+/* Touch qurilmalarda hover effektlarini faollashtirmaslik */
+@media (hover: none) {
+    .sm-shadow-hover:hover {
+        transform: none;
+        box-shadow: 0 1px 2px rgba(31, 42, 36, 0.05), 0 12px 32px -16px rgba(31, 42, 36, 0.25);
+    }
+    .sm-grow:hover { transform: none; }
+    .nav-link::after { display: none; }
+}
+
+/* Kichik ekranlarda jadval formasini o'qish uchun minimal kenglik */
+.sm-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ============ CHOP ETISH (sotuv cheki) ============ */
+@media print {
+    body > header,
+    body > footer,
+    .toast-container,
+    .loader-overlay,
+    .sm-print-hide {
+        display: none !important;
+    }
+
+    body {
+        background: #fff !important;
+    }
+
+    .sm-print-area {
+        border: 0 !important;
+        box-shadow: none !important;
+        margin-top: 0 !important;
+        border-radius: 0 !important;
+        max-width: none !important;
+    }
+
+    /* Termal chek: rangli fon va soyalar bosilmasin */
+    .sm-print-area,
+    .sm-print-area * {
+        color: #000 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-color: #999 !important;
+    }
+
+    .sm-receipt-head,
+    .sm-receipt-body {
+        padding: 0 0 2mm !important;
+    }
+
+    .sm-print-area table {
+        width: 100%;
+    }
+}

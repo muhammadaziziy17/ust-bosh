@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin
+Disallow: /login
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /dashboard
+Disallow: /pos
+Disallow: /warehouse
+Disallow: /change-password
